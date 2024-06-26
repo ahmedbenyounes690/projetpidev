@@ -1,0 +1,26 @@
+<div class="claimadmin">
+    <h2>Claim Management</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Chatroom</th>
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let claim of claims">
+          <td>{{ claim.title }}</td>
+          <td>{{ claim.description }}</td>
+          <td>{{ claim.status }}</td>
+          <td><button>
+            Chat <!-- Texte du bouton Chat -->
+          </button></td>
+          
+        
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -7,6 +7,7 @@ import { SideBarComponent } from './sidebar';
 import { LayoutComponent } from './layout';
 import { OverviewComponent } from './navbar';
 import { SharedModule } from '@app/shared';
+import { ClaimadminComponent } from './claimadmin/claimadmin.component'; // Assurez-vous que c'est bien importé
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { SharedModule } from '@app/shared';
     declarations: [
         SideBarComponent,
         LayoutComponent,
-        OverviewComponent
+        OverviewComponent,
+        ClaimadminComponent // Assurez-vous que c'est bien déclaré
     ]
 })
 export class AdminModule { }

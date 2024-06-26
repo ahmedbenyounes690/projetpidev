@@ -33,5 +33,6 @@ export class ClaimService {
         return this.http.delete(`${this.baseUrl}/${claimId}`);
     }
 
-   
 }
+
+

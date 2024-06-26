@@ -1,0 +1,57 @@
+.claimadmin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .claimadmin h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .claimadmin table {
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .claimadmin th,
+  .claimadmin td {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .claimadmin th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .claimadmin tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .claimadmin tr:nth-child(odd) {
+    background-color: #fff;
+  }
+  
+  .claimadmin tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  .claimadmin td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .claimadmin thead {
+    border-bottom: 2px solid #4CAF50;
+  }
