@@ -84,4 +84,18 @@ export class ClaimComponent implements OnInit {
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
 }

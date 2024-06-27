@@ -22,11 +22,16 @@
               <img src="assets/styling/img/edit icon/Edit_icon-icons.webp" alt="Delete" style="width: 20px; height: 20px;">
             </button>
           </td>
-          <td>
-            <button>
-              Chat <!-- Texte du bouton Chat -->
-            </button>
-          </td>
+         
+
+              <td>
+                <button [routerLink]="['/chat', claim._id]">
+                  Chat
+                </button>
+              </td>
+
+
+
         </tr>
       </tbody>
     </table>

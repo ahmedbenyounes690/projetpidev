@@ -1,7 +1,7 @@
-import Chat from '../models/chat.model.js'
+import Chat from '../models/chat.model.js';
 
 // add Message to chat
-export function addMessage (req, res) {
+export function addMessage(req, res) {
     const messageData = {
         senderID: req.user.id,
         senderName: req.user.firstName,
@@ -17,13 +17,13 @@ export function addMessage (req, res) {
     })
     .catch(err => {
         if(res) {
-            res.status(500).json(err)
+            res.status(500).json(err);
         }
-    })
+    });
 }
 
 // get messages for a specific claim between two users
-export function getMessages (req, res) {
+export function getMessages(req, res) {
     const { claimID } = req.params;
     const userID = req.user.id;
 

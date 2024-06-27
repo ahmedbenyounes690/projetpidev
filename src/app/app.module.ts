@@ -14,7 +14,8 @@ import { HomeComponent } from '@features/home';
 import { SharedModule } from '@shared/shared.module';
 import { BackButtonComponent } from './shared/components/back-button';
 import { ClaimComponent } from '@app/features/claim/claim.component';
-import { NgxMaskModule } from 'ngx-mask'
+import { NgxMaskModule } from 'ngx-mask';
+import { ChatComponent } from './features/chat/chat.component'
 //import { PlyrModule } from 'ngx-plyr';
 
 
@@ -36,6 +37,7 @@ import { NgxMaskModule } from 'ngx-mask'
         AppComponent,
         HomeComponent,
         BackButtonComponent,
+        ChatComponent,
     ],
     providers: [
         { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AccountService] },

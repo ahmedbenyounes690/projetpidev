@@ -3,8 +3,7 @@ import User from '../models/user.model.js';
 import jwt from 'jsonwebtoken';
 import { config } from './config.js';
 
-const { secret } = config
-
+const { secret } = config;
 
 export function handleSocketEvents(io) {
     // Verify User
@@ -31,20 +30,11 @@ export function handleSocketEvents(io) {
     io.on('connection', (socket) => {
         console.log('User connected:', socket.user.firstName);
 
-        // WebRTC signaling
-        socket.on('offer', (payload) => {
-            io.to(payload.target).emit('offer', payload);
+        socket.on('joinRoom', ({ claimID }) => {
+            socket.join(claimID);
+            console.log(`User ${socket.user.firstName} joined room: ${claimID}`);
         });
 
-        socket.on('answer', (payload) => {
-            io.to(payload.target).emit('answer', payload);
-        });
-
-        socket.on('ice-candidate', (incoming) => {
-            io.to(incoming.target).emit('ice-candidate', incoming.candidate);
-        });
-
-        // Handle chat messages
         socket.on('send message', async ({ claimID, receiverID, message }) => {
             if (socket.user) {
                 const messageData = {
@@ -55,9 +45,9 @@ export function handleSocketEvents(io) {
                     message
                 };
                 // Save the message in DB
-                 addMessage({ body: messageData, user: socket.user }, null);
-                // Emit message to receiver only
-                socket.to(receiverID).emit('receive message', messageData);
+                addMessage({ body: messageData, user: socket.user }, null);
+                // Emit message to room
+                io.to(claimID).emit('receive message', messageData);
             }
         });
 
