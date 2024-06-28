@@ -4,7 +4,7 @@ import authorize from '../_middleware/authorize.js'
 
 const router = express.Router()
 
-router.post('/add', authorize(), addMessage)
-router.get('/claim/:claimID', authorize(), getMessages)
+router.post('/add', addMessage)
+router.get('/claim/:claimID', getMessages)
 
 export default router;

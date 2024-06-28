@@ -1,25 +1,29 @@
 import Chat from '../models/chat.model.js';
+import mongoose from 'mongoose';
+const ObjectId = mongoose.Types.ObjectId;
 
 // add Message to chat
 export function addMessage(req, res) {
+    const senderID = new ObjectId(req.body.userId);
+    console.log("waaw")
+    console.log(senderID)
     const messageData = {
-        senderID: req.user.id,
-        senderName: req.user.firstName,
+        senderID: senderID,
         receiverID: req.body.receiverID,
         claimID: req.body.claimID, // send claimID in the request
         message: req.body.message
     };
-
+    console.log("test")
     Chat.create(messageData).then(newMsg => {
         if (res) {
             res.status(201).json(newMsg);
         }
     })
-    .catch(err => {
-        if(res) {
-            res.status(500).json(err);
-        }
-    });
+        .catch(err => {
+            if (res) {
+                res.status(500).json(err);
+            }
+        });
 }
 
 // get messages for a specific claim between two users
