@@ -6,7 +6,6 @@ import { config } from './config.js';
 const { secret } = config;
 
 export function handleSocketEvents(io) {
-    // Verify User
     io.use(async (socket, next) => {
         const token = socket.handshake.auth.token;
         if (!token) {

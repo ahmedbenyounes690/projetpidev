@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { JwtInterceptor, ErrorInterceptor } from '@core/interceptors';
 import { AccountService } from '@app/_services';
@@ -29,7 +27,7 @@ import { ChatComponent } from './features/chat/chat.component'
         FormsModule,
         AppRoutingModule,
         SharedModule,
-        NgxMaskModule.forRoot()
+
         //PlyrModule
     ],
     declarations: [
@@ -37,7 +35,8 @@ import { ChatComponent } from './features/chat/chat.component'
         AppComponent,
         HomeComponent,
         BackButtonComponent,
-        ChatComponent,
+        ChatComponent
+        
     ],
     providers: [
         { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AccountService] },

@@ -21,8 +21,8 @@ const routes: Routes = [
     { path: 'profile', loadChildren: PM },
     { path: 'pay', loadChildren: PaymentModule },
     { path: 'hello', loadChildren: FM },
+    { path: 'chat/:id', component: ChatComponent },  // Route pour accéder à ChatComponent spécifique au claim
     { path: 'claims', component: ClaimComponent },  // Route pour accéder à ClaimComponent
-    { path: 'chat/:claimID', component: ChatComponent },  // Route pour accéder à ChatComponent spécifique au claim
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

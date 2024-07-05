@@ -1,8 +1,11 @@
-<div>
-    <h2>Chat Room</h2>
-    <div *ngFor="let message of messages">
-      <strong>{{ message.senderName }}:</strong> {{ message.message }}
-    </div>
-    <input [(ngModel)]="message" placeholder="Enter your message">
-    <button (click)="sendMessage()">Send</button>
+<div class="chat-room">
+  <a routerLink="/claims">Go Back</a>
+  <h2>Chat Room</h2>
+  <div *ngFor="let message of messages">
+    <p>{{ message.senderID }}: {{ message.message }}</p>
   </div>
+  <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <input formControlName="message" placeholder="Type your message">
+    <button type="submit">Send</button>
+  </form>
+</div>
